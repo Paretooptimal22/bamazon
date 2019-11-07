@@ -16,6 +16,7 @@ const viewTable = () => {
     if (e) {
       console.log(e)
     }
+    // loop through each item in array and console log ID, Product, and Price
     console.log(`Items For Sale:`)
     for (let i = 0; i < data.length; i++) {
       console.log(`
@@ -25,4 +26,19 @@ const viewTable = () => {
   })
 }
 
-viewTable()
+// prompt main menu questions
+const main = () => {
+  viewTable()
+  inquirer.prompt({
+    type: `number`,
+    name: `ID`,
+    message: `Please Enter The Product ID You Want To Purchase`
+  },
+  {
+    type: `number`,
+    name: `Qty`,
+    message: `Please Enter Qty To Purchase`
+  })
+}
+
+main()
